@@ -1,5 +1,46 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  /**
+   * NOTE:
+   * ===========
+   * When the top section within main has a
+   * section gap the browser collapses the main
+   * wrapper causing whitespace to appear.
+   */
+  .prevent-collapse {
+    padding-top: 0.05px;
+    padding-bottom: 0.05px;
+  }
+
+  .text-shadow {
+    text-shadow: 1px 1px 3px rgb(0 0 0 / 29%), 2px 4px 7px rgb(73 64 125 / 35%);
+  }
+}
+
+@layer components {
+  .animate-marquee {
+    animation: marquee var(--marque-dur, 5s) linear infinite;
+  }
+
+  *:hover > .animate-marquee {
+    animation-play-state: paused;
+  }
+
+  .marquee-dur-skills {
+    --marque-dur: 20s;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(-0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}

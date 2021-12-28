@@ -20,10 +20,15 @@
       "@/lib/*": ["./lib/*"],
 
       // Src
-      "@/assets/*": ["./src/assets/*"],
       "@/components/*": ["./src/components/*"],
       "@/sections/*": ["./src/sections/*"],
       "@/templates/*": ["./src/templates/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/assets/*": ["./src/assets/*"],
+
+      // Icons and logos
+      "@/icons/*": ["./src/assets/icons/*"],
+      "@/logos/*": ["./src/assets/logos/*"],
 
       // Styles
       "@/styles/*": ["./styles/*"],

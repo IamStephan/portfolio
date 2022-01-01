@@ -35,7 +35,7 @@ export const Logos = {
     element: dynamic<TLogoElement>(() => import('@/assets/logos/react.svg')),
   },
   nextjs: {
-    alias: 'Next.JS',
+    alias: 'Next.js',
     element: dynamic<TLogoElement>(
       () => import('@/assets/logos/nextdotjs.svg')
     ),

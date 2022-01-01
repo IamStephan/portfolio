@@ -21,20 +21,18 @@
 
       // Src
       "@/components/*": ["./src/components/*"],
+      "@/constants/*": ["./src/constants/*"],
       "@/sections/*": ["./src/sections/*"],
       "@/templates/*": ["./src/templates/*"],
       "@/utils/*": ["./src/utils/*"],
       "@/assets/*": ["./src/assets/*"],
-
-      // Icons and logos
+      "@/types/*": ["./src/types/*"],
+      "@/api/*": ["./src/api/*"],
       "@/icons/*": ["./src/assets/icons/*"],
       "@/logos/*": ["./src/assets/logos/*"],
 
       // Styles
-      "@/styles/*": ["./styles/*"],
-
-      // Custom Types
-      "@/types/*": ["./types*"]
+      "@/styles/*": ["./styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

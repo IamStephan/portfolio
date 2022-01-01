@@ -26,12 +26,19 @@
     animation: marquee var(--marque-dur, 5s) linear infinite;
   }
 
-  *:hover > .animate-marquee {
-    animation-play-state: paused;
-  }
-
   .marquee-dur-skills {
     --marque-dur: 20s;
+  }
+
+  .perspective-box {
+    transform: perspective(2000px) translateX(0%) rotateY(30deg) rotateX(7deg);
+  }
+
+  @media (min-width: theme('screens.xl')) {
+    .perspective-box {
+      transform: perspective(2000px) translateX(10%) rotateY(30deg)
+        rotateX(10deg);
+    }
   }
 
   @keyframes marquee {

@@ -1,15 +1,20 @@
 import React from 'react'
 
-export interface Props extends React.HTMLProps<HTMLButtonElement> {
-  /**
-   * Without this set explicitly typescript complains
-   */
-  type?: 'reset' | 'submit' | 'button'
+export interface Props
+  extends Omit<React.HTMLProps<HTMLButtonElement>, 'type'> {
+  nativeType: 'button' | 'reset' | 'submit'
 }
 
-const Button: React.FC<Props> = ({ children, ...rest }) => {
-  return <button {...rest}>{children}</button>
+const Button: React.FC<Props> = ({
+  nativeType = 'submit',
+  children,
+  ...rest
+}) => {
+  return (
+    <button type={nativeType} {...rest}>
+      {children}
+    </button>
+  )
 }
 
-// TODO: Fix type to not conflict with clickable types
 export default Button

@@ -33,7 +33,7 @@ const Button: React.FC<Props> = ({
         {
           'pr-14 pl-6 hover:pr-6 hover:pl-14': !!rightIcon,
           'px-6': !rightIcon,
-          'bg-persian-red-main hover:bg-persian-red-main hover:bg-opacity-80':
+          'bg-persian-red-main hover:bg-persian-red-main/80':
             type === 'primary',
           'hover:bg-gray-800': type === 'secondary',
         },

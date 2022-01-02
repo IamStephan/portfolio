@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
 import Header from '@/sections/header'
 import Footer from '@/sections/footer'
 
-const PageTemplate: React.FC = ({ children }) => {
+const PageTemplate = forwardRef<HTMLDivElement>(({ children }, ref) => {
   return (
-    <div className="min-h-screen bg-named-primary-1 grainy-screen grainy-animate bg-grainy-[1] text-gray-50">
+    <div
+      ref={ref}
+      className="min-h-screen bg-named-primary-1 grainy-screen grainy-animate bg-grainy-[1] text-gray-50"
+    >
       <Header />
 
       <main className="prevent-collapse">{children}</main>
@@ -13,6 +16,6 @@ const PageTemplate: React.FC = ({ children }) => {
       <Footer />
     </div>
   )
-}
+})
 
 export default PageTemplate

@@ -10,7 +10,7 @@ module.exports = {
      * NOTE:
      * ======
      * From version 3 tailwind supports this natively
-     * but the support for it is not above 90% (https://caniuse.com/?search=aspect-ratio)
+     * but the browser support for it is not above 90% (https://caniuse.com/?search=aspect-ratio)
      * So rather use the 'padding-hack' for compatibility
      */
     require('@tailwindcss/aspect-ratio'),

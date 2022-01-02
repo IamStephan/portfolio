@@ -79,15 +79,9 @@ const Button: React.FC<Props> = ({
       </span>
 
       {/* Borders */}
-      <span
-        className={clsx(
-          'absolute inset-0 border-2  transition duration-150 ease-in-out',
-          {
-            'border-none': type === 'primary',
-            'border-gray-50': type === 'secondary',
-          }
-        )}
-      ></span>
+      {type !== 'primary' && (
+        <span className="absolute inset-0 transition duration-150 ease-in-out border-2 border-gray-50"></span>
+      )}
     </Clickable>
   )
 }

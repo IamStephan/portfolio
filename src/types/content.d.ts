@@ -1,4 +1,4 @@
-import { INextMDXImage } from '@/lib/shared-utils/handleNextMDXImages'
+import { INextMDXImage } from '@/lib/mdx-next-image-props'
 
 export interface IContentFrontmatter {
   title: string

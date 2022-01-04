@@ -5,10 +5,10 @@ export interface Props extends React.HTMLProps<HTMLAnchorElement> {
   to: string
 }
 
-const Link: React.FC<Props> = ({ className, to, children, ...rest }) => {
+const Link: React.FC<Props> = ({ to, children, ...rest }) => {
   return (
     <NextLink href={to}>
-      <a className={className} href={to} {...rest}>
+      <a href={to} {...rest}>
         {children}
       </a>
     </NextLink>

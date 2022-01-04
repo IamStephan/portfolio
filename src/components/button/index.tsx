@@ -2,11 +2,11 @@ import React from 'react'
 
 export interface Props
   extends Omit<React.HTMLProps<HTMLButtonElement>, 'type'> {
-  nativeType: 'button' | 'reset' | 'submit'
+  nativeType?: 'button' | 'reset' | 'submit'
 }
 
 const Button: React.FC<Props> = ({
-  nativeType = 'submit',
+  nativeType = 'button',
   children,
   ...rest
 }) => {

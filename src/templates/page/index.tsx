@@ -3,7 +3,9 @@ import React, { forwardRef } from 'react'
 import Header from '@/sections/header'
 import Footer from '@/sections/footer'
 
-const PageTemplate = forwardRef<HTMLDivElement>(({ children }, ref) => {
+interface Props {}
+
+const PageTemplate = forwardRef<HTMLDivElement, Props>(({ children }, ref) => {
   return (
     <div
       ref={ref}

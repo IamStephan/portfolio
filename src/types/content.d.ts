@@ -1,6 +1,7 @@
 import { INextMDXImage } from '@/lib/mdx-next-image-props'
 
 export interface IContentFrontmatter {
+  slug: string
   title: string
   showcase: INextMDXImage
   overview: string

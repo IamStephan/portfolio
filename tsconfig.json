@@ -22,6 +22,7 @@
       // Src
       "@/components/*": ["./src/components/*"],
       "@/constants/*": ["./src/constants/*"],
+      "@/hooks/*": ["./src/hooks/*"],
       "@/sections/*": ["./src/sections/*"],
       "@/templates/*": ["./src/templates/*"],
       "@/utils/*": ["./src/utils/*"],

@@ -1,5 +1,28 @@
+function LinkEdits() {
+  return {
+    async rewrites() {
+      return [
+        {
+          source: '/case-studies',
+          destination: '/case-studies/page/1',
+        },
+      ]
+    },
+    async redirects() {
+      return [
+        {
+          source: '/case-studies/page',
+          destination: '/case-studies',
+          permanent: true,
+        },
+      ]
+    },
+  }
+}
+
 /** @type {import('next').NextConfig} */
 module.exports = {
+  ...LinkEdits(),
   reactStrictMode: true,
   webpack(config) {
     const fileLoaderRule = config.module.rules.find(

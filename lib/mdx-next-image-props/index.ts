@@ -1,7 +1,8 @@
 import path from 'path'
 import fs from 'fs/promises'
 import fsSync from 'fs'
-import { objectBasedHash } from '@/lib/shared-utils'
+import { imageHash } from '@/lib/shared-utils'
+
 import createNextImage from './createNextImage'
 
 export interface IConfig {
@@ -55,11 +56,12 @@ export const handleNextMDXImages = async (
 ) => {
   const imagePath = path.resolve(path.dirname(rootDir), filePath)
   const imageBuffer = await fs.readFile(imagePath)
-  const stats = await fs.stat(imagePath)
-  const hashedName = `matter-${filePath.split('.')[0]}-${objectBasedHash(
-    stats
-  )}.${filePath.split('.')[1]}`
   const image = await createNextImage(imageBuffer, filePath)
+  const hashedName = await imageHash(
+    imageBuffer,
+    filePath.split('.')[0],
+    filePath.split('.')[1]
+  )
 
   await _outDirSafety(outDir)
   await _yeetFrontmatterImages(imagePath, `${outDir}/${hashedName}`)

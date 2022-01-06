@@ -1,2 +1,2 @@
 export { deepMap } from './deepMap'
-export { objectBasedHash } from './fileHashing'
+export { imageHash } from './imageHash'

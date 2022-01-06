@@ -6,13 +6,9 @@ import { serialize } from 'next-mdx-remote/serialize'
 
 import { mdxNextFrontmatterImages } from '@/lib/mdx-nfi'
 import { mdxNextContentImages } from '@/lib/mdx-nci'
-import { ROOT_DIR, CONTENT_DIR_PREFIX } from '@/constants/path'
+import { ROOT_DIR } from '@/constants/path'
 import { IContentFrontmatter } from '@/types/content'
-
-const Config = (slug: string) => ({
-  outDir: `${ROOT_DIR}/public/${CONTENT_DIR_PREFIX}/${slug}`,
-  publicPath: `/${CONTENT_DIR_PREFIX}/${slug}`,
-})
+import { mdxImagesConfig } from '@/utils/index'
 
 /**
  * @description Get case study based on its slug
@@ -28,13 +24,13 @@ const GetBySlug = async (slug: string) => {
   const _content = await mdxNextContentImages(
     path.resolve(ROOT_DIR, entry),
     content,
-    Config(slug)
+    mdxImagesConfig(slug)
   )
 
   const _frontmatter = await mdxNextFrontmatterImages(
     path.resolve(ROOT_DIR, entry),
     data,
-    Config(slug)
+    mdxImagesConfig(slug)
   )
 
   const source = await serialize(_content, {})

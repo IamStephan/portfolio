@@ -5,12 +5,7 @@ import matter from 'gray-matter'
 import { mdxNextFrontmatterImages } from '@/lib/mdx-nfi'
 import { ROOT_DIR, CONTENT_DIR_PREFIX } from '@/constants/path'
 import { IContentFrontmatter } from '@/types/content'
-import { getCaseEntries } from '@/utils/get_case_entries'
-
-const FrontmatterConfig = {
-  outDir: `${ROOT_DIR}/public/${CONTENT_DIR_PREFIX}`,
-  publicPath: `/${CONTENT_DIR_PREFIX}`,
-}
+import { getCaseEntries, mdxImagesConfig } from '@/utils/index'
 
 interface IExtendedFrontmatter extends IContentFrontmatter {
   fileLoc: string
@@ -75,7 +70,7 @@ const GetFeatured = async (numOfItems: number) => {
       const frontmatter = (await mdxNextFrontmatterImages(
         fileLoc,
         _item,
-        FrontmatterConfig
+        mdxImagesConfig(_item.slug)
       )) as IContentFrontmatter
 
       return frontmatter

@@ -9,7 +9,7 @@ const PageTemplate = forwardRef<HTMLDivElement, Props>(({ children }, ref) => {
   return (
     <div
       ref={ref}
-      className="min-h-screen bg-named-primary-1 grainy-screen grainy-animate bg-grainy-[1] text-gray-50"
+      className="min-h-screen bg-dark-900 grainy-screen grainy-animate bg-grainy-[1] text-gray-50"
     >
       <Header />
 

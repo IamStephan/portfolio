@@ -29,7 +29,10 @@ export const SectionGapMap: Record<TSectionGapMode, string> = {
   none: '',
 }
 
-const SectionTemplate = forwardRef<HTMLDivElement, Props>(
+const SectionTemplate = forwardRef<
+  HTMLDivElement,
+  React.PropsWithChildren<Props>
+>(
   (
     {
       as = 'section',

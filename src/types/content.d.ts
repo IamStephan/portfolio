@@ -14,3 +14,7 @@ export interface IContentFrontmatter {
   date: string
   isFeatured?: boolean
 }
+
+export interface IExtendedFrontmatter extends IContentFrontmatter {
+  to: string
+}

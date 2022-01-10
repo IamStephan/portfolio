@@ -1,13 +1,15 @@
 import React from 'react'
 import clsx from 'clsx'
 
-type TFontSIzes = '2xl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs' | '2xs'
+type TFontSIzes = '2xl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs' | '2xs' | '3xs'
 type TElements = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'div'
 
 interface Props extends React.HTMLProps<HTMLHeadingElement> {
   font?: TFontSIzes
   as?: TElements
   alignBaseline?: boolean
+  isBold?: boolean
+  isDisplay?: boolean
 }
 
 /**
@@ -27,11 +29,14 @@ export const FontSizes: Record<TFontSIzes, string> = {
   sm: 'text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl',
   xs: 'text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl',
   '2xs': 'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl',
+  '3xs': 'text-base md:text-lg xl:text-xl',
 }
 
 const Heading: React.FC<Props> = ({
   as = 'h1',
   font = 'lg',
+  isBold = true,
+  isDisplay = true,
   children,
   className,
   ...rest
@@ -41,7 +46,14 @@ const Heading: React.FC<Props> = ({
 
   return (
     <Element
-      className={clsx('font-black font-heading', fontSize, className)}
+      className={clsx(
+        {
+          'font-heading': isDisplay,
+          'font-black': isBold,
+        },
+        fontSize,
+        className
+      )}
       {...rest}
     >
       {children}

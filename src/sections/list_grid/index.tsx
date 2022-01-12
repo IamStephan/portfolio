@@ -104,7 +104,6 @@ const ListGrid: React.FC<Props> = ({ title, collectionTo, items }) => {
           leftIcon={<ArrowIcon />}
           rightIcon={<BriefcaseIcon />}
           to={Pages.cases()}
-          // type="secondary"
           className="md:hidden"
         >
           View all

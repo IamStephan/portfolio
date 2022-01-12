@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import Section from '@/templates/section'
 import Heading from '@/components/heading'
 import Button from '@/components/clickable'
-import { useIsReady } from '@/hooks/useIsReady'
+import { useLoaderStore } from '@/stores/loader'
 import Pages from '@/constants/pages'
 
 import ResumeIcon from '@/assets/icons/profile-line.svg'
@@ -15,7 +15,7 @@ import ArrowIcon from '@/assets/icons/arrow-right-line.svg'
 const IndentStyles = 'sm:ml-16 md:ml-32 lg:ml-60'
 
 const Hero = () => {
-  const { isReady } = useIsReady()
+  const { isLoading } = useLoaderStore()
 
   return (
     <Section sectionGap="bottom" isPadded className="overflow-hidden">
@@ -24,7 +24,7 @@ const Hero = () => {
           'flex flex-col items-start pb-6 sm:pt-12 sm:pb-8 md:pt-20 md:pb-12 lg:pt-36 lg:pb-24',
           'delay-300 transition-transform duration-1000 ease-out',
           {
-            'perspective-box': isReady,
+            'perspective-box': !isLoading,
           }
         )}
       >

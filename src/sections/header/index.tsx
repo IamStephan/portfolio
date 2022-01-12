@@ -34,7 +34,11 @@ export interface Props {}
 
 const Header: React.FC<Props> = () => {
   const { logoPos } = useLogoStore()
-  const isMobile = useMedia(`(min-width: ${screens.lg})`)
+  /**
+   * Default state does not matter since logoPos is
+   * only set to in-header when js is loaded (client-side)
+   */
+  const isMobile = useMedia(`(min-width: ${screens.lg})`, true)
 
   return (
     <Section

@@ -50,7 +50,7 @@ const ContentOverview: React.FC<Props> = ({
               Repository
             </Button>
           ) : (
-            //
+            // Cosmetic button, Should probably add a tooltip
             <Button
               as="externalLink"
               type="secondary"

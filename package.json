@@ -19,14 +19,14 @@
     "next-mdx-remote": "^3.0.8",
     "next-seo": "^4.28.1",
     "node-match-path": "^0.6.3",
-    "object-hash": "^2.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-flip-toolkit": "^7.0.13",
     "react-hook-form": "^7.22.5",
+    "react-use": "^17.3.2",
     "sharp": "^0.29.3",
     "string-replace-async": "^3.0.2",
-    "zustand": "^3.6.8"
+    "valtio": "^1.2.8"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.1.2",
@@ -36,7 +36,6 @@
     "@tailwindcss/typography": "^0.5.0",
     "@types/fontfaceobserver": "^2.1.0",
     "@types/node": "17.0.0",
-    "@types/object-hash": "^2.2.1",
     "@types/react": "17.0.37",
     "@types/sharp": "^0.29.5",
     "autoprefixer": "^10.4.0",

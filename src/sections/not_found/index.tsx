@@ -4,6 +4,7 @@ import Section from '@/templates/section'
 import Heading from '@/components/heading'
 import Button from '@/components/clickable'
 import Logo from '@/components/p_logo'
+import Pages from '@/constants/pages'
 
 import HomeIcon from '@/assets/icons/home-smile-2-line.svg'
 import ArrowIcon from '@/assets/icons/arrow-right-line.svg'
@@ -22,7 +23,7 @@ const NotFoundSection = () => {
         The page you are looking for doesn't exist or has been moved
       </p>
 
-      <Button to="/" rightIcon={<HomeIcon />} leftIcon={<ArrowIcon />}>
+      <Button to={Pages.home} rightIcon={<HomeIcon />} leftIcon={<ArrowIcon />}>
         Go Back Home
       </Button>
     </Section>

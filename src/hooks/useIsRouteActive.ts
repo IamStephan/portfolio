@@ -7,5 +7,4 @@ const useIsRouteActive = (path: string | Array<string>) => {
   return matchURL(path, asPath)
 }
 
-// TODO: Implement ability to check multiple with one hook instance
 export default useIsRouteActive

@@ -24,6 +24,7 @@
       "@/constants/*": ["./src/constants/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/sections/*": ["./src/sections/*"],
+      "@/stores/*": ["./src/stores/*"],
       "@/templates/*": ["./src/templates/*"],
       "@/utils/*": ["./src/utils/*"],
       "@/assets/*": ["./src/assets/*"],

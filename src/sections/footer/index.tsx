@@ -68,6 +68,7 @@ const Footer: React.FC<Props> = ({ hasTopLine }) => {
             <ExternalLink
               href={url}
               key={url}
+              isTrusted
               className="relative flex items-center justify-center py-6 overflow-hidden cursor-pointer group"
             >
               <Logo className="z-10 w-auto h-8 md:h-6 lg:h-8" />

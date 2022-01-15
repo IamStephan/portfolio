@@ -1,5 +1,6 @@
 import React from 'react'
 import { useMedia } from 'react-use'
+import clsx from 'clsx'
 
 import Section from '@/templates/section'
 import Button from '@/components/clickable'
@@ -51,17 +52,14 @@ const Header: React.FC<Props> = () => {
       <div>
         <Link to={Pages.home}>
           {logoPos === 'in-header' && (
-            <>
-              {isMobile ? (
-                <Logo type="mini" className="z-30 w-64" />
-              ) : (
-                <Logo
-                  type="nano"
-                  className="z-30 w-auto"
-                  wrapperClassname="h-12"
-                />
-              )}
-            </>
+            <Logo
+              type={isMobile ? 'mini' : 'nano'}
+              className={clsx('z-30', {
+                'w-64': isMobile,
+                'w-auto': !isMobile,
+              })}
+              wrapperClassName={clsx({ 'h-12': !isMobile })}
+            />
           )}
         </Link>
       </div>

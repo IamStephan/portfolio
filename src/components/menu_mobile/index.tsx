@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Flipped } from 'react-flip-toolkit'
+import { useRouter } from 'next/router'
 
 import Heading from '@/components/heading'
 import Button from '@/components/clickable'
@@ -7,12 +8,12 @@ import Link from '@/components/link'
 import ExternalLink from '@/components/external_link'
 import Logo from '@/components/p_logo'
 import Socials from '@/constants/socials'
-// import { useLogoStore } from '@/stores/logo'
 import { useLoaderStore } from '@/stores/loader'
 
 import ResumeIcon from '@/assets/icons/profile-line.svg'
 import DownloadIcon from '@/assets/icons/download-2-line.svg'
 import CloseIcon from '@/assets/icons/close-line.svg'
+import Pages from '@/constants/pages'
 
 import {
   handleWrapperAnim,
@@ -26,6 +27,15 @@ interface Props {
 
 const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
   const { isLoading } = useLoaderStore()
+  const { events } = useRouter()
+
+  useEffect(() => {
+    events.on('routeChangeComplete', onCloseRequest)
+
+    return () => {
+      events.off('routeChangeComplete', onCloseRequest)
+    }
+  }, [])
 
   return (
     <Flipped
@@ -52,25 +62,28 @@ const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
           onExit={handleContainerAnim}
         >
           <div className="absolute flex flex-col max-h-[calc(100%-48px)] overflow-auto overflow-y-auto border border-gray-600 top-6 inset-x-6 bg-dark-900">
-            <div className="flex justify-center h-auto max-w-full px-6 py-6">
+            <Link
+              to={Pages.home}
+              className="flex justify-center h-auto max-w-full px-6 py-6"
+            >
               {!isLoading && (
                 <Logo type="main" flipPrefix="menu" shouldExit={false} />
               )}
-            </div>
+            </Link>
 
-            <Link to="/about" className="py-6">
+            <Link to={Pages.about} className="py-6">
               <Heading font="2xl" as="span" className="block text-center">
                 About
               </Heading>
             </Link>
 
-            <Link to="/case-studies" className="py-6">
+            <Link to={Pages.cases()} className="py-6">
               <Heading font="2xl" as="span" className="block text-center">
                 Cases
               </Heading>
             </Link>
 
-            <Link to="/contact" className="py-6">
+            <Link to={Pages.contact} className="py-6">
               <Heading font="2xl" as="span" className="block text-center">
                 Contact
               </Heading>
@@ -91,6 +104,7 @@ const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
                 <div key={url} className="aspect-w-3 aspect-h-2 group">
                   <ExternalLink
                     href={url}
+                    isTrusted
                     className="flex items-center justify-center group-active:bg-dark-500/40"
                   >
                     <Logo className="w-6 h-6 xs:h-8 xs:w-8" />

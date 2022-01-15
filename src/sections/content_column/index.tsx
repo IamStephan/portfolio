@@ -8,12 +8,14 @@ import ProseStyles from '@/constants/prose'
 export interface Props {
   title: string | React.ReactNode
   proseContent?: boolean
+  isPadded?: boolean
 }
 
 const ContentColumn: React.FC<Props> = ({
   title,
   children,
   proseContent = true,
+  isPadded,
 }) => {
   return (
     <Section
@@ -33,6 +35,7 @@ const ContentColumn: React.FC<Props> = ({
       <div
         className={clsx('flex-1 max-w-3xl justify-self-end w-full self-end', {
           [ProseStyles]: proseContent,
+          'pt-4 md:pt-6 lg:pt-0': isPadded,
         })}
       >
         {children}

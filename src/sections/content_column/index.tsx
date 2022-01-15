@@ -3,14 +3,12 @@ import clsx from 'clsx'
 
 import Section from '@/templates/section'
 import Heading from '@/components/heading'
+import ProseStyles from '@/constants/prose'
 
 export interface Props {
   title: string | React.ReactNode
   proseContent?: boolean
 }
-
-const ProseStyles =
-  'prose !prose-invert prose-neutral prose-inner prose-sm md:prose-base'
 
 const ContentColumn: React.FC<Props> = ({
   title,

@@ -11,7 +11,7 @@ interface BaseProps {
   isJumbo?: boolean
   rightIcon?: React.ReactNode
   leftIcon?: React.ReactNode
-  disabled?: boolean
+  isLoading?: boolean
 }
 
 type Props = BaseProps & ClickableProps
@@ -54,8 +54,9 @@ const _containerStyles = (
 const Button: React.FC<Props> = ({
   type = 'primary',
   isJumbo = false,
-  className,
   disabled = false,
+  isLoading,
+  className,
   rightIcon,
   leftIcon = rightIcon,
   children,
@@ -104,6 +105,23 @@ const Button: React.FC<Props> = ({
       {/* Borders */}
       {type !== 'primary' && (
         <span className="absolute inset-0 transition duration-150 ease-in-out border-2 border-gray-50"></span>
+      )}
+
+      {/* Loader */}
+      {isLoading && (
+        <span
+          className={clsx(
+            'absolute inset-0 transition duration-150 ease-in-out ',
+            {
+              'bg-persian-red-main': type === 'primary',
+              'border-2 border-gray-50 bg-dark-900': type === 'secondary',
+            }
+          )}
+        >
+          <span className="absolute flex items-center justify-center -translate-x-1/2 -translate-y-1/2 w-7 h-7 left-1/2 top-1/2">
+            <span className="w-full h-full border-4 rounded-full animate-spin border-l-transparent border-r-transparent border-t-gray-50 border-b-gray-50" />
+          </span>
+        </span>
       )}
     </Clickable>
   )

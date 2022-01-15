@@ -25,5 +25,5 @@ const LogoChip: React.FC<Props> = ({ className, logo }) => {
   )
 }
 
-// TODO: Implement Component
+//* Done
 export default LogoChip

@@ -12,7 +12,7 @@ const shouldLogoFlip = (prev: any, cur: any) => prev.asPath === cur.asPath
 interface Props extends React.HTMLProps<HTMLDivElement> {
   type: TType
   shouldAnimate?: boolean
-  wrapperClassname?: string
+  wrapperClassName?: string
   flipPrefix?: string
   shouldExit?: boolean
 }
@@ -20,7 +20,7 @@ interface Props extends React.HTMLProps<HTMLDivElement> {
 const Icon: React.FC<Props> = ({
   type,
   className,
-  wrapperClassname,
+  wrapperClassName,
   shouldAnimate = true,
   flipPrefix,
   shouldExit = true,
@@ -37,7 +37,7 @@ const Icon: React.FC<Props> = ({
 
   return (
     <div className={clsx('relative', className)} {...rest}>
-      <div className={clsx('relative', wrapperClassname)}>
+      <div className={clsx('relative', wrapperClassName)}>
         <Letter
           shouldFlip={shouldFlip}
           flipPrefix={flipPrefix}

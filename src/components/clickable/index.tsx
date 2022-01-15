@@ -127,5 +127,4 @@ const Button: React.FC<Props> = ({
   )
 }
 
-//* Done
 export default Button

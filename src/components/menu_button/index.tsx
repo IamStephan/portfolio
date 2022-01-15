@@ -68,5 +68,4 @@ const MenuButton = () => {
   )
 }
 
-//* Done
 export default MenuButton

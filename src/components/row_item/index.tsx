@@ -48,5 +48,4 @@ const RowItem: React.FC<Props> = ({ title, overview, showcase, stack, to }) => {
   )
 }
 
-//* Done
 export default RowItem

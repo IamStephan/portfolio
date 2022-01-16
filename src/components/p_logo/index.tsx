@@ -48,7 +48,11 @@ const Icon: React.FC<Props> = ({
         />
 
         {type !== 'nano' && (
-          <Wings flipPrefix={flipPrefix} shouldFlip={shouldFlip} />
+          <Wings
+            flipPrefix={flipPrefix}
+            shouldExit={shouldExit}
+            shouldFlip={shouldFlip}
+          />
         )}
       </div>
 

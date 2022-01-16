@@ -1,6 +1,4 @@
-type GenericObject = {
-  [key: string]: any
-}
+import { GenericObject } from '@/types/misc'
 
 export const encodeFormData = (data: GenericObject) => {
   return Object.keys(data)

@@ -1,10 +1,56 @@
 import React from 'react'
+import { spring } from 'react-flip-toolkit'
 
 import LogoBase, { Props as BaseProps } from './_logo_base'
 
-const Wings: React.FC<BaseProps> = ({ flipId = 'logo-wings', ...rest }) => {
+interface Props extends BaseProps {
+  shouldExit?: boolean
+}
+
+const _handleExit = (element: HTMLElement) => {
+  spring({
+    values: {
+      opacity: [1, 0],
+      transform: [0, 25],
+    },
+    onUpdate({ opacity, transform }: any) {
+      if (!element.getAttribute('moved')) {
+        document.body.appendChild(element)
+        element.setAttribute('moved', '')
+
+        element.style.top = `${element.getAttribute('rect-top') as any}px`
+        element.style.left = `${element.getAttribute('rect-left') as any}px`
+        element.style.position = 'fixed'
+      }
+
+      element.style.opacity = opacity
+      element.style.transform = `translateY(${transform}px)`
+    },
+    onComplete() {
+      element.remove()
+    },
+  })
+}
+
+const Wings: React.FC<Props> = ({
+  flipId = 'logo-wings',
+  shouldExit,
+  ...rest
+}) => {
   return (
-    <LogoBase flipId={flipId} {...rest} className="h-auto">
+    <LogoBase
+      flipId={flipId}
+      divRef={(ref) => {
+        if (ref) {
+          const rect = ref.getBoundingClientRect()
+          ref.setAttribute('rect-top', `${rect.y}`)
+          ref.setAttribute('rect-left', `${rect.x}`)
+        }
+      }}
+      onExit={shouldExit ? _handleExit : undefined}
+      className="h-auto"
+      {...rest}
+    >
       <svg
         className="w-full h-auto"
         viewBox="0 0 815 177"

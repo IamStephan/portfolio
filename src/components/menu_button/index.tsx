@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import clsx from 'clsx'
 import { Flipper, Flipped } from 'react-flip-toolkit'
 
@@ -11,10 +12,19 @@ import {
 } from '@/stores/mobile_menu'
 
 const MenuButton = () => {
+  const { asPath, events } = useRouter()
   const { isOpen } = useMobileMenu()
   const [shouldAnimate, setShouldAnimate] = useState(false)
 
   useEffect(() => {
+    const setAnimatableOn = () => {
+      setShouldAnimate(true)
+    }
+
+    const setAnimatableOff = () => {
+      setShouldAnimate(false)
+    }
+
     /**
      * Note:
      * ======
@@ -24,14 +34,26 @@ const MenuButton = () => {
      * I can't set the flipper decision data to control this with
      * shouldFlip prop. It skips the entire check and just animates
      *
-     * So instead I'm just waiting until the component has mounted and
-     * and the set the flipIds (Flipped with undefined ids do not animate).
+     * So instead I'm listening for route changes to determine
+     * if the lines should animate
      */
-    setShouldAnimate(true)
+
+    events.on('routeChangeStart', setAnimatableOff)
+    events.on('routeChangeComplete', setAnimatableOn)
+
+    return () => {
+      events.off('routeChangeStart', setAnimatableOff)
+      events.off('routeChangeComplete', setAnimatableOn)
+    }
   }, [])
 
   return (
-    <Flipper flipKey={isOpen ? 'open-menu' : 'close-menu'}>
+    <Flipper
+      flipKey={`${isOpen ? 'open-menu' : 'close-menu'}-${asPath}`}
+      decisionData={{
+        asPath,
+      }}
+    >
       <Button
         className="relative py-2 font-bold font-heading"
         onClick={openMobileMenu}

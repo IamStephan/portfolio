@@ -37,7 +37,7 @@ const MenuButton = () => {
      * So instead I'm listening for route changes to determine
      * if the lines should animate
      */
-
+    setShouldAnimate(true)
     events.on('routeChangeStart', setAnimatableOff)
     events.on('routeChangeComplete', setAnimatableOn)
 

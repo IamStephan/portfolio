@@ -6,10 +6,8 @@ interface ChildComponents {
   Item: typeof Item
 }
 
-interface Props {}
-
-const Timeline: React.FC<Props> & ChildComponents = ({ children }) => {
-  return <div>{children}</div>
+const Timeline: React.FC & ChildComponents = ({ children }) => {
+  return <>{children}</>
 }
 
 Timeline.Item = Item

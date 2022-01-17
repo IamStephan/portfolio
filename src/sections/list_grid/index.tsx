@@ -7,10 +7,10 @@ import Heading from '@/components/heading'
 import Button from '@/components/clickable'
 import Link from '@/components/link'
 import Pages from '@/constants/pages'
+import { IExtendedFrontmatter } from '@/types/content'
 
 import ArrowIcon from '@/assets/icons/arrow-right-line.svg'
 import BriefcaseIcon from '@/assets/icons/briefcase-4-line.svg'
-import { IExtendedFrontmatter } from '@/types/content'
 
 interface Props {
   title: string

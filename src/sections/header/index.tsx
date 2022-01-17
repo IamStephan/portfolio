@@ -82,7 +82,7 @@ const Header: React.FC<Props> = () => {
           leftIcon={<DownloadIcon />}
           as="button"
         >
-          Resume
+          Resumé
         </Button>
       </div>
 

@@ -56,6 +56,11 @@ const resizeImage = async (
   return await transformer.toBuffer()
 }
 
+/**
+ *
+ * @param content Buffer of the image
+ * @returns
+ */
 const getImageSize = async (content: Buffer) => {
   const transformer = sharp(content)
   const { height, width } = await transformer.metadata()

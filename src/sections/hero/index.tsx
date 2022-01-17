@@ -52,8 +52,8 @@ const Hero = () => {
             IndentStyles
           )}
         >
-          Creating the tech of tomorrow, today with <b>expertise</b> and{' '}
-          <b>passion</b>.
+          Creating <i>clean</i>, <i>maintainable</i> and <i>scalable</i> code
+          that exceeds <strong>expectations</strong>.
         </p>
 
         <div
@@ -77,7 +77,7 @@ const Hero = () => {
             rightIcon={<ResumeIcon />}
             leftIcon={<DownloadIcon />}
           >
-            Download Resume
+            Download Resumé
           </Button>
         </div>
       </div>
@@ -85,5 +85,5 @@ const Hero = () => {
   )
 }
 
-//* Done (I think)
+//* Done
 export default Hero

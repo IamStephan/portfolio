@@ -5,6 +5,13 @@
 import { imageFromBuffer, getImageData } from '@canvas/image'
 import { bmvbhash } from 'blockhash-core'
 
+/**
+ *
+ * @param imageBuffer
+ * @param filename
+ * @param extension
+ * @returns
+ */
 export const imageHash = async (
   imageBuffer: Buffer,
   filename: string,

@@ -6,6 +6,7 @@ interface Props extends MDXRemoteSerializeResult {}
 
 const Sections: Record<string, React.ReactNode> = {
   Showcase: dynamic(() => import('@/sections/content_showcase')),
+  ShowcaseSingle: dynamic(() => import('@/sections/content_showcase_single')),
   Column: dynamic(() => import('@/sections/content_column')),
   Featured: dynamic(() => import('@/sections/content_featured')),
   Metrics: dynamic(() => import('@/sections/content_metrics')),

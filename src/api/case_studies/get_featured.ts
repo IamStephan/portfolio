@@ -43,7 +43,7 @@ const GetFeatured = async (numOfItems: number) => {
     let results: number = 0
 
     // By isFeatured
-    if (a.isFeatured && a.isFeatured) {
+    if (a.isFeatured && b.isFeatured) {
     } else if (a.isFeatured || b.isFeatured) {
       return a.isFeatured ? -1 : 1
     }

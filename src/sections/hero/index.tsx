@@ -52,7 +52,7 @@ const Hero = () => {
             IndentStyles
           )}
         >
-          Creating <i>clean</i>, <i>maintainable</i> and <i>scalable</i> code
+          Writting <i>clean</i>, <i>maintainable</i> and <i>scalable</i> code
           that exceeds <strong>expectations</strong>.
         </p>
 

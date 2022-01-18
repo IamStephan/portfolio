@@ -12,8 +12,8 @@ interface Props {
 }
 
 const DefaultTitle = (
-  <span>
-    Think we're a good fit? Let's get <i>talking</i>.
+  <span className="tracking-[0.001em]">
+    Think we're a good fit? Let's get <i>talking.</i>
   </span>
 )
 

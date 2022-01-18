@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 
 import { mdxNextFrontmatterImages } from '@/lib/mdx-nfi'
-import { ROOT_DIR, CONTENT_DIR_PREFIX } from '@/constants/path'
+import { ROOT_DIR } from '@/constants/path'
 import { IContentFrontmatter } from '@/types/content'
 import { getCaseEntries, mdxImagesConfig } from '@/utils/index'
 

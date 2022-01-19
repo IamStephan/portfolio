@@ -96,15 +96,14 @@ const ContentShowcase: React.FC<Props> = ({ images }) => {
       <div ref={emblaRef} className="overflow-hidden">
         {/* container */}
         <div className={clsx('flex mx-64 space-x-12', MarginStyles)}>
-          {images.map(({ src, blurDataURL }, i) => (
+          {images.map(({ width, height, ...imageProps }, i) => (
             <div
               key={i}
               className="flex-grow-0 flex-shrink-0 w-full sm:w-1/2 md:w-2/5"
             >
               <div className="aspect-w-16 aspect-h-9">
                 <Image
-                  src={src}
-                  blurDataURL={blurDataURL}
+                  {...imageProps}
                   placeholder="blur"
                   layout="fill"
                   objectFit="cover"

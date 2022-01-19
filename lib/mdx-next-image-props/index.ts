@@ -15,6 +15,7 @@ export interface INextMDXImage {
   height: number
   src: string
   blurDataURL: string
+  alt?: string
 }
 
 /**

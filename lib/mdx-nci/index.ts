@@ -22,15 +22,21 @@ export const mdxNextContentImages = async (
     content,
     /(image)\([^\)]*\)(\.[^\)]*\))?/g,
     async (match) => {
-      const value = (match.match(/("|')((?:\\\1|(?:(?!\1).))*)\1/g)?.[0] || '')
-        // This is assuming that the params cannot contain ' and "
-        .replaceAll(/\"|\'/g, '')
+      const value = match.match(/("|')((?:\\\1|(?:(?!\1).))*)\1/g) || []
+
+      // This is assuming that the params cannot contain ' and "
+      let args = value.map((arg) => arg.trim().replaceAll(/\"|\'/g, ''))
+
+      const imagePath = args[0]
+      const imageAlt = args[1]
 
       const imageNode = await handleNextMDXImages(
         filepath,
-        path.basename(value),
+        path.basename(imagePath),
         config
       )
+
+      imageNode.alt = imageAlt
 
       return JSON.stringify(imageNode)
     }

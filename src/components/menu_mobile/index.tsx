@@ -35,7 +35,7 @@ const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
     return () => {
       events.off('routeChangeComplete', onCloseRequest)
     }
-  }, [])
+  }, [onCloseRequest, events])
 
   return (
     <Flipped

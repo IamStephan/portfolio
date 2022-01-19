@@ -18,7 +18,8 @@ const Progressbar: React.FC<Props> = ({
   const _onRouteChangeStart = useCallback(() => {
     NProgress.set(startPos)
     NProgress.start()
-  }, [])
+  }, [startPos])
+
   const _onRouteChangeEnd = useCallback(() => {
     NProgress.done(true)
   }, [])
@@ -37,7 +38,7 @@ const Progressbar: React.FC<Props> = ({
       events.off('routeChangeComplete', _onRouteChangeEnd)
       events.off('routeChangeError', _onRouteChangeEnd)
     }
-  }, [])
+  }, [events, _onRouteChangeStart, _onRouteChangeEnd])
 
   return (
     <style jsx global>

@@ -45,7 +45,7 @@ const MenuButton = () => {
       events.off('routeChangeStart', setAnimatableOff)
       events.off('routeChangeComplete', setAnimatableOn)
     }
-  }, [])
+  }, [setShouldAnimate, events])
 
   return (
     <Flipper

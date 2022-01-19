@@ -34,21 +34,6 @@
     transform: perspective(2000px) translateX(0%) rotateY(30deg) rotateX(7deg);
   }
 
-  .img-auto-width > span {
-    width: auto !important;
-    height: 100% !important;
-  }
-
-  .img-auto-width > span > span {
-    width: auto !important;
-    height: 100% !important;
-  }
-
-  .img-auto-width > span > span > img {
-    width: auto !important;
-    height: 100% !important;
-  }
-
   @media (min-width: theme('screens.xl')) {
     .perspective-box {
       transform: perspective(2000px) translateX(10%) rotateY(30deg)

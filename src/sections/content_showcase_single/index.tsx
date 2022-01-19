@@ -1,18 +1,17 @@
-import React, { useCallback, useEffect } from 'react'
-import Image, { ImageProps } from 'next/image'
-import clsx from 'clsx'
+import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel, { EmblaCarouselType } from 'embla-carousel-react'
+import Image, { ImageProps } from 'next/image'
+import { Controlled } from 'react-medium-image-zoom'
+import clsx from 'clsx'
 
-import Section, {
-  PaddedStyles,
-  MarginStyles,
-  WidthClampMap,
-} from '@/templates/section'
+import Section, { PaddedStyles, MarginStyles } from '@/templates/section'
 import Heading from '@/components/heading'
 import Button from '@/components/button'
 
 import ArrowLeft from '@/assets/icons/arrow-left-s-line.svg'
 import ArrowRight from '@/assets/icons/arrow-right-s-line.svg'
+
+import 'react-medium-image-zoom/dist/styles.css'
 
 interface Props {
   images: Array<ImageProps>
@@ -42,12 +41,33 @@ const _handleScrollClick = (
   api.scrollTo(scrollToIndex)
 }
 
-const ContentShowcase: React.FC<Props> = ({ images }) => {
+const ContentShowcaseSingle: React.FC<Props> = ({ images }) => {
+  const [activeZoom, setActiveZoom] = useState(-1)
+  const [isClickable, setIsClickable] = useState(true)
+
   const [emblaRef, api] = useEmblaCarousel({
     dragFree: true,
     containScroll: 'keepSnaps',
     align: 'center',
   })
+
+  const _handleZoomOpen = useCallback(
+    (zoomIndex: number) => () => {
+      if (activeZoom === -1 && isClickable) {
+        setActiveZoom(zoomIndex)
+      }
+    },
+    [activeZoom, isClickable, setActiveZoom]
+  )
+
+  const _handleZoomClose = useCallback(
+    (zoom: boolean) => {
+      if (!zoom) {
+        setActiveZoom(-1)
+      }
+    },
+    [setActiveZoom]
+  )
 
   const _handleNext = useCallback(() => {
     _handleScrollClick('forward', api)
@@ -60,21 +80,37 @@ const ContentShowcase: React.FC<Props> = ({ images }) => {
   useEffect(() => {
     if (!api) return
 
+    const _canNotClick = () => setIsClickable(false)
+    const _canClick = () => setIsClickable(true)
+
     api.reInit()
+
+    api.on('scroll', _canNotClick)
+    api.on('settle', _canClick)
+
+    return () => {
+      api.off('scroll', _canNotClick)
+      api.off('settle', _canClick)
+    }
   }, [api])
 
   return (
-    <Section>
+    <Section widthClamp="md">
       <div
         className={clsx(
-          WidthClampMap.md,
           PaddedStyles,
           'mb-4 sm:mb-6 md:mb-8 lg:mb-12 mx-auto flex justify-between items-end'
         )}
       >
-        <Heading font="sm" as="h2" className="">
-          Project showcase
-        </Heading>
+        <div>
+          <Heading font="sm" as="h2" className="mb-2">
+            Project showcase
+          </Heading>
+          <p className="text-sm italic text-gray-500">
+            (<span className="md:hidden">Tap</span>
+            <span className="hidden md:inline">Click</span> to zoom)
+          </p>
+        </div>
 
         <div className="flex items-center space-x-4 md:space-x-6">
           <Button
@@ -93,23 +129,37 @@ const ContentShowcase: React.FC<Props> = ({ images }) => {
       </div>
 
       {/* Wrapper */}
-      <div ref={emblaRef} className="overflow-hidden">
+      <div ref={emblaRef} className="overflow-hidden bg-dark-900/75">
         {/* container */}
         <div className={clsx('flex mx-44 space-x-12', MarginStyles)}>
-          {images.map(({ src, blurDataURL, width, height }, i) => (
-            <div
-              key={i}
-              className="relative flex-grow-0 flex-shrink-0 w-auto h-56 sm:h-72 md:h-80 lg:h-96 img-auto-width"
-            >
-              <Image
-                src={src}
-                width={width}
-                height={height}
-                blurDataURL={blurDataURL}
-                placeholder="blur"
-                layout="intrinsic"
-                objectFit="contain"
-              />
+          {images.map(({ width, height, ...imageProps }, i) => (
+            <div className="flex-shrink-0" key={i} onClick={_handleZoomOpen(i)}>
+              <Controlled
+                isZoomed={i === activeZoom}
+                onZoomChange={_handleZoomClose}
+                key={i}
+                zoomMargin={75}
+                overlayBgColorEnd="rgb(12 14 15 / 0.75)"
+              >
+                <div
+                  key={i}
+                  className="relative w-auto h-56 sm:h-72 md:h-80 lg:h-96"
+                >
+                  <img
+                    height={height}
+                    width={width}
+                    className="w-auto h-full min-h-full opacity-0"
+                    aria-hidden
+                  />
+
+                  <Image
+                    {...imageProps}
+                    placeholder="blur"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </Controlled>
             </div>
           ))}
         </div>
@@ -119,4 +169,4 @@ const ContentShowcase: React.FC<Props> = ({ images }) => {
 }
 
 //* Done
-export default ContentShowcase
+export default ContentShowcaseSingle

@@ -5,12 +5,8 @@ import clsx from 'clsx'
 
 import Section, { PaddedStyles, MarginStyles } from '@/templates/section'
 import Heading from '@/components/heading'
-import Button from '@/components/button'
 import useCarousel, { TOptions } from '@/hooks/useCarousel'
 import useCarouselZoom from '@/hooks/useCarouselZoom'
-
-import ArrowLeft from '@/assets/icons/arrow-left-s-line.svg'
-import ArrowRight from '@/assets/icons/arrow-right-s-line.svg'
 
 import 'react-medium-image-zoom/dist/styles.css'
 
@@ -25,7 +21,7 @@ const CarouselOptions: TOptions = {
 }
 
 const ContentShowcaseSingle: React.FC<Props> = ({ images }) => {
-  const { ref, api, handleNext, handlePrev } = useCarousel(CarouselOptions)
+  const { ref, api } = useCarousel(CarouselOptions)
   const { activeIndex, handleZoomIn, handleZoomOut } = useCarouselZoom(api)
 
   return (
@@ -42,23 +38,9 @@ const ContentShowcaseSingle: React.FC<Props> = ({ images }) => {
           </Heading>
           <p className="text-sm italic text-gray-500">
             (<span className="md:hidden">Tap</span>
-            <span className="hidden md:inline">Click</span> to zoom)
+            <span className="hidden md:inline">Click</span> to zoom, drag to
+            scroll)
           </p>
-        </div>
-
-        <div className="flex items-center space-x-4 md:space-x-6">
-          <Button
-            onClick={handlePrev}
-            className="flex items-center justify-center p-2 duration-150 rounded-full sm:p-2 ring-1 ring-gray-50 hover:bg-gray-800 active:bg-gray-700"
-          >
-            <ArrowLeft className="pr-0.5 w-7 h-7" />
-          </Button>
-          <Button
-            onClick={handleNext}
-            className="flex items-center justify-center p-2 rounded-full md:p-2 ring-1 ring-gray-50 hover:bg-gray-800 active:bg-gray-700"
-          >
-            <ArrowRight className="pl-0.5 w-7 h-7" />
-          </Button>
         </div>
       </div>
 

@@ -53,7 +53,7 @@ const Hero = () => {
           )}
         >
           Writting <i>clean</i>, <i>maintainable</i> and <i>scalable</i> code
-          that exceeds <strong>expectations</strong>.
+          that pushes the <strong>envelope</strong>.
         </p>
 
         <div

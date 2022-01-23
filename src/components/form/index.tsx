@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
+import { object, string } from 'yup'
 
 import Input from '@/components/input'
 import Button from '@/components/clickable'
@@ -19,14 +19,13 @@ interface IFormData {
   message: string
 }
 
-const formSchema = yup.object({
-  name: yup.string().required('Name is a required field'),
-  email: yup
-    .string()
+const formSchema = object({
+  name: string().required('Name is a required field'),
+  email: string()
     .email('Email is not a valid email')
     .required('Email is a required field'),
-  subject: yup.string().required('Subject is a required field'),
-  message: yup.string().required('Message is a required field'),
+  subject: string().required('Subject is a required field'),
+  message: string().required('Message is a required field'),
 })
 
 const Form: React.FC = () => {

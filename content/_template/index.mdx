@@ -1,0 +1,111 @@
+---
+# Basic data
+title: 'Template'
+showcase: './showcase.jpg'
+overview: 'Overview of the project and summary of the end result'
+role: 'Frontend Developer'
+
+# Indicate the different scopes of the project (e.g. frontend, backend, website, mobile app)
+type:
+  - Project-type
+
+# List of logo names defined in `/src/components/logos/index.ts`
+stack:
+  - expo
+  - reactnative
+  - typescript
+  - firebase
+  - gatsby
+  - nextjs
+
+# Links for this project
+links:
+  repo: '' # <- Set this to an empty string to indicate its a private repo
+  liveLink: '' # <- Optional
+
+# Used internally for sorting
+# Use ISO Date format (YYYY-MM-DD)
+date: 2020-08-01
+
+# Prioritize this case study
+isFeatured: true
+---
+
+<!-- Essentially the reason for this project and the end results -->
+
+<Featured
+  title="Problem Statement"
+  items={[
+    {
+      title: 'The Problem',
+      description: 'Main problem that needs to be resolved',
+    },
+    {
+      title: 'The Solution',
+      description: 'The path/solution I took',
+    },
+    {
+      title: 'The Results',
+      description: 'The results of the solution',
+    },
+  ]}
+/>
+
+<!-- Showcase some images in a carousel, with a set aspect ratio of 16:9 -->
+
+<Showcase
+  images={[
+    image('./showcase.jpg', 'alt text'),
+    image('./showcase.jpg', 'alt text'),
+    image('./showcase.jpg', 'alt text'),
+  ]}
+/>
+
+<!-- Showcase images in a carousel, with a fixed height and variable width, and zoomable images -->
+
+<ShowcaseSingle
+  images={[
+    image('./showcase.jpg', 'alt text'),
+    image('./showcase.jpg', 'alt text'),
+    image('./showcase.jpg', 'alt text'),
+    image('./showcase.jpg', 'alt text'),
+    image('./showcase.jpg', 'alt text'),
+    image('./showcase.jpg', 'alt text'),
+    image('./showcase.jpg', 'alt text'),
+  ]}
+/>
+
+<!-- Project metrics that are worth noting -->
+
+<Metrics
+  title="The Results?"
+  items={[
+    {
+      metric: '+ 2.2K',
+      text: 'Metric description.',
+    },
+    {
+      metric: '+ 2.2K',
+      text: 'Metric description.',
+    },
+    {
+      metric: '+ 2.2K',
+      text: 'Metric description.',
+    },
+    {
+      metric: '+ 2.2K',
+      text: 'Metric description.',
+    },
+  ]}
+/>
+
+<!-- Notes that are of particular interrest to this project -->
+
+<Column title="Concluding notes">
+
+### Example of markdown inside a component's children
+
+Using markdown is possible within a component but there needs to
+be at least 2 newlines on both the top and bottom boundries
+
+</Column>

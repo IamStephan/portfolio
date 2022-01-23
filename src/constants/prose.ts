@@ -4,6 +4,6 @@ prose-h4:font-bold prose-h3:prose-h4:text-base sm:prose-h4:text-lg md:prose-h4:t
 prose-h5:font-bold prose-h5:text-base md:prose-h5:text-lg xl:prose-h5:text-xl
 `
 
-const ProseStyles = `prose !prose-invert prose-neutral prose-sm md:prose-base ${HeadingStyles}`
+const ProseStyles = `prose !prose-invert prose-neutral prose-sm md:prose-base prose-headings:font-heading ${HeadingStyles}`
 
 export default ProseStyles

@@ -9,7 +9,7 @@ import PrivateRepoIcon from '@/assets/icons/git-repo-private-line.svg'
 import EarthIcon from '@/assets/icons/earth-line.svg'
 import ExternalLinkIcon from '@/assets/icons/external-link-line.svg'
 import ForbidIcon from '@/assets/icons/forbid-line.svg'
-import Chip from '@/components/logo_chip'
+import LogoChip from '@/components/logo_chip'
 
 interface Props {
   overview: string
@@ -89,7 +89,7 @@ const ContentOverview: React.FC<Props> = ({
           </Heading>
           <ul className="flex flex-wrap -mt-1 -ml-1">
             {stack.map((item) => (
-              <Chip key={item} logo={item as any} className="m-1" />
+              <LogoChip key={item} logo={item as any} className="m-1" />
             ))}
           </ul>
         </div>

@@ -1,0 +1,61 @@
+---
+title: 'Mobility Crunch'
+showcase: './showcase.jpg'
+overview: 'Starting the year 2020, when the pandemic had gone full swing in South Africa, Gerimed Mobility saw a massive influx in demand for their medical supplies. To ease the load on the owner and employees, I designed and built a mobile app to handle transactional documents right from their pocket.'
+role: 'Frontend Developer'
+stack:
+  - reactnative
+  - typescript
+  - firebase
+  - expo
+links:
+  repo: 'https://github.com/IamStephan/mobility-crunch'
+date: 2020-05-15
+---
+
+<Featured
+  title="Problem Statement"
+  items={[
+    {
+      title: 'The Problem',
+      description:
+        'With more customers to help than there are hands and a manual ordering process, Gerimed Mobility needed a quick and easy way to send their customers transactional documents.',
+    },
+    {
+      title: 'The Solution',
+      description:
+        'Instead of dealing with Excel for each order, I made a mobile app with a simple internal inventory system that creates and sends transactional documents to both parties.',
+    },
+    {
+      title: 'The Results',
+      description:
+        'Going from about 30 minutes to less than 1 minute, they were able to send their customers the required documents with ease and little to no human-made errors.',
+    },
+  ]}
+/>
+
+<ShowcaseSingle
+  images={[
+    image('./showcase_001.jpg', 'Product list screen'),
+    image('./showcase_002.jpg', 'Add product to list screen'),
+    image('./showcase_003.jpg', 'Add products order selection screen'),
+    image('./showcase_004.jpg', 'Generate document as screen'),
+    image('./showcase_005.jpg', 'View generated document screen'),
+    image('./showcase_006.jpg', 'View order screen'),
+    image('./showcase_007.jpg', 'Add order screen'),
+  ]}
+/>
+
+<Column title="Concluding notes">
+
+### Overcoming IOS restrictions
+
+Initially, I built this app with React Native CLI,
+as it's my preferred environment; I quickly ran into
+the issue of not being able to run the app on IOS.
+Since I used a few native modules, switching to Expo
+wasn't as simple as it seemed. After an entire rewrite
+and some alternatives to the native modules, I was
+finally able to get it to run on the owner's phone.
+
+</Column>

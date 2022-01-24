@@ -1,0 +1,96 @@
+---
+title: 'Gerimed Mobility'
+showcase: './showcase.jpg'
+overview: "Gerimed Mobility is a local medical supply shop operating out of Langebaan. They have been in business since 2001 and needed an online shop to cater to their user's needs. As ambitious as I was, I built the entire frontend from the ground up, creating the backend with Strapi and custom plugins."
+role: 'Fullstack Developer'
+stack:
+  - javascript
+  - react
+  - gatsby
+  - scss
+  - strapi
+  - graphql
+links:
+  repo: 'https://github.com/IamStephan/gerimed-mobility'
+  liveLink: 'https://gerimedmobility.co.za'
+date: 2020-07-04
+isFeatured: true
+---
+
+<Featured
+  title="Problem Statement"
+  items={[
+    {
+      title: 'The Problem',
+      description:
+        'Wanting to expand their business, the shop owner approached me with an opportunity to build an online shop, wanting an easy way to manage their products and orders.',
+    },
+    {
+      title: 'The Solution',
+      description:
+        'Not wanting to use WordPress for this, I decided that a custom solution would be the best choice to allow for as much flexibility as possible while keeping to my skills.',
+    },
+    {
+      title: 'The Results',
+      description:
+        "The result of a custom online shop was an easily adaptable online shop that's performant with hassle-free management from the admin panel, pushing me as a developer.",
+    },
+  ]}
+/>
+
+<ShowcaseSingle
+  images={[
+    image('./showcase_001.jpg', 'Home page showcase'),
+    image('./showcase_mobile_001.jpg', 'Home page mobile showcase'),
+    image('./showcase_002.jpg', 'Auth page showcase'),
+    image('./showcase_mobile_002.jpg', 'Auth page Mobile showcase'),
+    image('./showcase_003.jpg', 'Shop page showcase'),
+    image('./showcase_mobile_003.jpg', 'Shop page mobile showcase'),
+    image('./showcase_004.jpg', 'About page showcase'),
+    image('./showcase_mobile_004.jpg', 'About page mobile showcase'),
+  ]}
+/>
+
+<Column title="Concluding notes">
+
+### Project scope
+
+Without a doubt, the scope of this project was humongous.
+I was already comfortable creating the storefront but had
+little experience with the backend.
+
+#### Security
+
+Keeping security as the primary objective, I researched various
+approaches to dealing with the backend, ensuring the entire
+setup was PCI-compliant. A few pain relievers came from the owner
+and the way he wanted to deal with payments.
+
+#### Online payments and deliveries
+
+Although I wanted to implement a full payment and delivery system,
+the owner prefered having a quote-based system and manual handling
+of orders. This was a massive relief for me as I did not have to
+deal with payments and deliveries.
+
+I did, however, implement a cart system, an order management system,
+and quotes and invoices generation from the ground up
+
+#### API handling and the storefront architecture
+
+Using React as the focal point for the storefront meant I had to make
+architecture decisions that would typically not be of interest in static
+sites. With React being only a library, I decided to follow the MVC
+pattern (Model-View-Controller).
+
+The main setup for this patterns was:
+
+- Model ➜ GraphQL (From Strapi)
+- View ➜ React
+- Controller ➜ xState (Finite state machines)
+
+Following this pattern allowed me to separate logic, have clear insights
+on the data model being used, and create global and scoped states that
+are predictable.
+
+</Column>

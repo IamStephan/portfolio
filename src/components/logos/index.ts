@@ -64,6 +64,10 @@ export const Logos = {
     alias: 'Firebase',
     element: dynamic<TLogoElement>(() => import('@/assets/logos/firebase.svg')),
   },
+  graphql: {
+    alias: 'GraphQL',
+    element: dynamic<TLogoElement>(() => import('@/assets/logos/graphql.svg')),
+  },
   php: {
     alias: 'PHP',
     element: dynamic<TLogoElement>(() => import('@/assets/logos/php.svg')),

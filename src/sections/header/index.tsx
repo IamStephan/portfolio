@@ -52,14 +52,7 @@ const Header: React.FC<Props> = () => {
       <div>
         <Link to={Pages.home}>
           {logoPos === 'in-header' && (
-            <Logo
-              type={isMobile ? 'mini' : 'nano'}
-              className={clsx('z-30', {
-                'w-64': isMobile,
-                'w-auto': !isMobile,
-              })}
-              wrapperClassName={clsx({ 'h-12': !isMobile })}
-            />
+            <Logo type="mini" className={clsx('z-30 h-16', {})} />
           )}
         </Link>
       </div>

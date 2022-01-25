@@ -56,7 +56,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       {logoPos === 'in-loader' && (
         <div className="fixed inset-0 flex items-center justify-center inset-x-16 xs:inset-8 sm:inset-x-0">
-          <Logo className="w-full h-auto sm:w-96" type="main" />
+          <Logo className="max-w-[250px] h-auto sm:w-96" type="main" />
         </div>
       )}
     </Flipper>

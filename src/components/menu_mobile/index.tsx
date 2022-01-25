@@ -64,10 +64,10 @@ const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
           <div className="absolute flex flex-col max-h-[calc(100%-48px)] overflow-auto overflow-y-auto border border-gray-600 top-6 inset-x-6 bg-dark-900">
             <Link
               to={Pages.home}
-              className="flex justify-center h-auto max-w-full px-6 py-6"
+              className="flex justify-center h-48 max-w-full px-6 py-6 border-b border-gray-600"
             >
               {!isLoading && (
-                <Logo type="main" flipPrefix="menu" shouldExit={false} />
+                <Logo type="mini" flipPrefix="menu" shouldExit={false} />
               )}
             </Link>
 

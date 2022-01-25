@@ -17,18 +17,16 @@ const EmptyState: React.FC<Props> = ({ title, message, action }) => {
 
   return (
     <Section isPadded widthClamp="md" className="space-y-8">
-      <div className="flex justify-center mx-8">
-        <Logo
-          type={isMobile ? 'main' : 'mini'}
-          flipPrefix="empty"
-          shouldExit={false}
-        />
+      <div className="flex justify-center h-16 mx-8 md:h-24">
+        <Logo type="mini" flipPrefix="empty" shouldExit={false} />
       </div>
-      <div>
+      <div className="flex flex-col items-center">
         <Heading font="md" className="mb-2 text-center">
           {title}
         </Heading>
-        <p className="text-center text-gray-400 lg:text-lg">{message}</p>
+        <p className="max-w-sm text-center text-gray-400 lg:text-lg">
+          {message}
+        </p>
       </div>
 
       <div className="flex justify-center">{action}</div>

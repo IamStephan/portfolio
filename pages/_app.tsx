@@ -38,6 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <DefaultSeo
         titleTemplate="%s | Frontend Developer"
         title="Stephan Burger"
+        description="Hey, I'm Stephan, a frontend developer."
         additionalLinkTags={SeoFavicon}
       />
 

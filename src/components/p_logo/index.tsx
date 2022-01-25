@@ -1,11 +1,10 @@
 import React, { useCallback } from 'react'
 import clsx from 'clsx'
 
-import Letter from './letter'
-import Wings from './wings'
-import Ribbon from './ribbon'
+import Main from './main'
+import Footer from './footer'
 
-type TType = 'main' | 'mini' | 'nano'
+type TType = 'main' | 'mini'
 
 const shouldLogoFlip = (prev: any, cur: any) => prev.asPath === cur.asPath
 
@@ -17,7 +16,7 @@ interface Props extends React.HTMLProps<HTMLDivElement> {
   shouldExit?: boolean
 }
 
-const Icon: React.FC<Props> = ({
+const PersonalLogo: React.FC<Props> = ({
   type,
   className,
   wrapperClassName,
@@ -34,30 +33,12 @@ const Icon: React.FC<Props> = ({
     },
     [shouldAnimate]
   )
-
   return (
     <div className={clsx('relative', className)} {...rest}>
-      <div className={clsx('relative', wrapperClassName)}>
-        <Letter
-          shouldFlip={shouldFlip}
-          flipPrefix={flipPrefix}
-          className={clsx({
-            'h-full w-auto top-0 left-1/2 -translate-x-1/2 absolute':
-              type === 'mini' || type === 'main',
-          })}
-        />
-
-        {type !== 'nano' && (
-          <Wings
-            flipPrefix={flipPrefix}
-            shouldExit={shouldExit}
-            shouldFlip={shouldFlip}
-          />
-        )}
-      </div>
+      <Main shouldFlip={shouldFlip} flipPrefix={flipPrefix} />
 
       {type === 'main' && (
-        <Ribbon
+        <Footer
           flipPrefix={flipPrefix}
           shouldExit={shouldExit}
           shouldFlip={shouldFlip}
@@ -67,6 +48,4 @@ const Icon: React.FC<Props> = ({
   )
 }
 
-// TODO: Better handling of exit animations
-// TODO: Rather use images or redo ribbon component to decrease size
-export default Icon
+export default PersonalLogo

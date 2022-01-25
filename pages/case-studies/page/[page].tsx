@@ -11,7 +11,7 @@ import GetPages from '@/api/case_studies/get_pages'
 import GetByPage from '@/api/case_studies/get_by_page'
 import { IExtendedFrontmatter } from '@/types/content'
 
-import ShowcaseImg from '@/assets/images/case-studies/showcase.jpg'
+import ShowcaseImg from '@/assets/images/general-banner-showcase.jpg'
 import Pages from '@/constants/pages'
 
 interface Props {

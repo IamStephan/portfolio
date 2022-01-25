@@ -8,7 +8,8 @@ import ContentColumn from '@/sections/content_column'
 import CTA from '@/sections/cta'
 import Timeline from '@/components/timeline'
 import PreferredStack from '@/components/preferred_stack'
-import TestImage from '@/assets/images/case-studies/showcase.jpg'
+
+import TestImage from '@/assets/images/general-banner-showcase.jpg'
 import BriefcaseIcon from '@/assets/icons/briefcase-4-line.svg'
 
 const About: NextPage = () => {

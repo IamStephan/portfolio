@@ -21,7 +21,10 @@ interface Props {
 const CaseStudyPage: NextPage<Props> = ({ frontmatter, source }) => {
   return (
     <>
-      <NextSeo title={`${frontmatter.title} | Case Study`} />
+      <NextSeo
+        title={`${frontmatter.title} | Case Study`}
+        description={frontmatter.overview}
+      />
       <Page>
         <ShowcaseBanner
           title={`[${frontmatter.title}]`}

@@ -107,7 +107,7 @@ const About: NextPage = () => {
         </ContentColumn>
         <ContentColumn title="Stack expertise">
           <h3 id="stack-expertise" className="scroll-m-16">
-            Strong opinions loosely held.
+            Strong opinions loosely held
           </h3>
           <p>
             You are a developer and have been tasked with creating the next big

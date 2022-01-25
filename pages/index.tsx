@@ -35,7 +35,7 @@ const Home: NextPage<Props> = ({ featuredItems }) => {
             View stack expertise
           </Button>
         }
-        title="Using the right tools for the job."
+        title="With the right tools for the job"
       />
 
       <ListGrid

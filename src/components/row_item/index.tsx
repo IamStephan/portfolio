@@ -8,7 +8,7 @@ import LogoChip from '@/components/logo_chip'
 import ArrowIcon from '@/assets/icons/arrow-right-line.svg'
 import { IExtendedFrontmatter } from '@/types/content'
 
-export interface Props extends IExtendedFrontmatter {}
+export type Props = IExtendedFrontmatter
 
 const RowItem: React.FC<Props> = ({ title, overview, showcase, stack, to }) => {
   const { width, height, ..._showcase } = showcase
@@ -20,6 +20,7 @@ const RowItem: React.FC<Props> = ({ title, overview, showcase, stack, to }) => {
       <div className="relative mb-4 md:mb-8 h-44 xs:h-64 md:h-96 lg:col-span-5 lg:min-h-full">
         <Image
           {..._showcase}
+          alt={`${title} showcase`}
           placeholder="blur"
           objectFit="cover"
           layout="fill"

@@ -1,6 +1,6 @@
 import { proxy, useSnapshot } from 'valtio'
 
-export type TLogoPos = 'in-loader' | 'in-header' | 'in-mobile-menu'
+export type TLogoPos = 'in-loader' | 'in-header'
 
 interface IStore {
   logoPos: TLogoPos

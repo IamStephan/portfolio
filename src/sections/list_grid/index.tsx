@@ -63,6 +63,7 @@ const ListGrid: React.FC<Props> = ({ title, collectionTo, items }) => {
           >
             <Image
               {...showcase}
+              alt={`${title} showcase on mutliple devices`}
               // Explicityly setting this to undefined
               width={undefined}
               height={undefined}

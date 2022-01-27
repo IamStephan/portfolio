@@ -6,6 +6,7 @@ import Heading from '@/components/heading'
 import Button from '@/components/clickable'
 import { useLoaderStore } from '@/stores/loader'
 import Pages from '@/constants/pages'
+import ResumeUrl from '@/constants/resume'
 
 import ResumeIcon from '@/assets/icons/profile-line.svg'
 import BriefcaseIcon from '@/assets/icons/briefcase-4-line.svg'
@@ -73,6 +74,7 @@ const Hero = () => {
           </Button>
           <Button
             as="externalLink"
+            href={ResumeUrl}
             isJumbo={true}
             rightIcon={<ResumeIcon />}
             leftIcon={<DownloadIcon />}

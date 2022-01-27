@@ -8,6 +8,7 @@ import Link from '@/components/link'
 import ExternalLink from '@/components/external_link'
 import Socials from '@/constants/socials'
 import Pages from '@/constants/pages'
+import ResumeUrl from '@/constants/resume'
 
 import ResumeIcon from '@/assets/icons/profile-line.svg'
 import DownloadIcon from '@/assets/icons/download-2-line.svg'
@@ -87,7 +88,8 @@ const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
 
             <div className="flex justify-center py-6">
               <Button
-                as="button"
+                as="externalLink"
+                href={ResumeUrl}
                 rightIcon={<ResumeIcon />}
                 leftIcon={<DownloadIcon />}
               >

@@ -9,7 +9,8 @@ import Logo from '@/components/p_logo'
 import MenuButton from '@/components/menu_button'
 import { useLogoStore } from '@/stores/logo'
 import Pages from '@/constants/pages'
-import screens from '@/constants/screens'
+import Screens from '@/constants/screens'
+import ResumeUrl from '@/constants/resume'
 
 import ResumeIcon from '@/assets/icons/profile-line.svg'
 import DownloadIcon from '@/assets/icons/download-2-line.svg'
@@ -39,7 +40,7 @@ const Header: React.FC<Props> = () => {
    * Default state does not matter since logoPos is
    * only set to in-header when js is loaded (client-side)
    */
-  const isMobile = useMedia(`(min-width: ${screens.lg})`, true)
+  const isMobile = useMedia(`(min-width: ${Screens.lg})`, true)
 
   return (
     <Section
@@ -71,9 +72,10 @@ const Header: React.FC<Props> = () => {
       {/* CTA Button */}
       <div className="hidden md:block">
         <Button
+          href={ResumeUrl}
           rightIcon={<ResumeIcon />}
           leftIcon={<DownloadIcon />}
-          as="button"
+          as="externalLink"
         >
           Resumé
         </Button>

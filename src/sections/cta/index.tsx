@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import Section from '@/templates/section'
 import Heading from '@/components/heading'
 import Button from '@/components/clickable'
+import ResumeUrl from '@/constants/resume'
 
 import ResumeIcon from '@/assets/icons/profile-line.svg'
 import DownloadIcon from '@/assets/icons/download-2-line.svg'
@@ -35,6 +36,7 @@ const CallToAction: React.FC<Props> = ({ title = DefaultTitle }) => {
       </Heading>
       <Button
         as="externalLink"
+        href={ResumeUrl}
         isJumbo
         rightIcon={<ResumeIcon />}
         leftIcon={<DownloadIcon />}

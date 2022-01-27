@@ -6,14 +6,13 @@ import Heading from '@/components/heading'
 import Button from '@/components/clickable'
 import Link from '@/components/link'
 import ExternalLink from '@/components/external_link'
-import Logo from '@/components/p_logo'
 import Socials from '@/constants/socials'
-import { useLoaderStore } from '@/stores/loader'
+import Pages from '@/constants/pages'
 
 import ResumeIcon from '@/assets/icons/profile-line.svg'
 import DownloadIcon from '@/assets/icons/download-2-line.svg'
 import CloseIcon from '@/assets/icons/close-line.svg'
-import Pages from '@/constants/pages'
+import HorLogo from '@/assets/logos/p-logo-hor.svg'
 
 import {
   handleWrapperAnim,
@@ -26,7 +25,6 @@ interface Props {
 }
 
 const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
-  const { isLoading } = useLoaderStore()
   const { events } = useRouter()
 
   useEffect(() => {
@@ -64,11 +62,9 @@ const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
           <div className="absolute flex flex-col max-h-[calc(100%-48px)] overflow-auto overflow-y-auto border border-gray-600 top-6 inset-x-6 bg-dark-900">
             <Link
               to={Pages.home}
-              className="flex justify-center h-48 max-w-full px-6 py-6 border-b border-gray-600"
+              className="flex justify-center max-w-full px-6 py-6"
             >
-              {!isLoading && (
-                <Logo type="mini" flipPrefix="menu" shouldExit={false} />
-              )}
+              <HorLogo className="w-full h-auto max-w-[250px]" />
             </Link>
 
             <Link to={Pages.about} className="py-6">
@@ -126,5 +122,5 @@ const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
   )
 }
 
-// TODO: Menu should animate exit on route change as well. This is an issue with react flip toolkit
+//* Done
 export default Menu

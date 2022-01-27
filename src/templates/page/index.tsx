@@ -16,7 +16,7 @@ const PageTemplate = forwardRef<HTMLDivElement, React.PropsWithChildren<Props>>(
         className="min-h-screen bg-dark-900 grainy-screen grainy-animate bg-grainy-[1] text-gray-50"
       >
         <Header {...headerProps} />
-        <main className="prevent-collapse">{children}</main>
+        <main className="overflow-x-hidden prevent-collapse">{children}</main>
         <Footer {...footerProps} />
       </div>
     )

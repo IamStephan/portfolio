@@ -17,6 +17,7 @@ interface IFormData {
   email: string
   subject: string
   message: string
+  'bot-field'?: string
 }
 
 const formSchema = object({
@@ -26,6 +27,7 @@ const formSchema = object({
     .required('Email is a required field'),
   subject: string().required('Subject is a required field'),
   message: string().required('Message is a required field'),
+  'bot-field': string().optional(),
 })
 
 const Form: React.FC = () => {
@@ -71,6 +73,9 @@ const Form: React.FC = () => {
       onSubmit={handleSubmit(_handleSubmit)}
     >
       <input type="hidden" name="form-name" value="contact-me" />
+      <div hidden>
+        Do not fill this: <input {...register('bot-field')} />
+      </div>
       <Input
         placeholder="Name *"
         error={errors.name?.message}

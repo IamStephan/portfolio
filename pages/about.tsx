@@ -50,13 +50,9 @@ const About: NextPage = () => {
 
             <Timeline.Item
               title="Freelance developer"
-              subtitle="January 2019 - Current | Freelancing"
+              subtitle="October 2018 - March 2021 | Freelancing"
               icon={<BriefcaseIcon className="w-6 h-6" />}
             >
-              <blockquote>
-                <strong>Full disclosure:</strong> My current position takes
-                precedence over freelancing opportunities.
-              </blockquote>
               <p>
                 While attending University, I started playing around with the
                 idea of building a simple app from scratch to production to
@@ -76,10 +72,6 @@ const About: NextPage = () => {
                 hometown, going from simple static websites to creating
                 applications that impacted how a business handles its
                 operations.
-              </p>
-              <p>
-                I still occasionally take on Freelance opportunities, and I see
-                it as a great way to keep myself updated and widen my horizons.
               </p>
             </Timeline.Item>
 

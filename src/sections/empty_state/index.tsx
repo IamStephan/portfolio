@@ -1,10 +1,8 @@
 import React from 'react'
-import { useMedia } from 'react-use'
 
 import Section from '@/templates/section'
 import Heading from '@/components/heading'
 import Logo from '@/components/p_logo'
-import screens from '@/constants/screens'
 
 interface Props {
   title: string
@@ -13,8 +11,6 @@ interface Props {
 }
 
 const EmptyState: React.FC<Props> = ({ title, message, action }) => {
-  const isMobile = useMedia(`(min-width: ${screens.lg})`, true)
-
   return (
     <Section isPadded widthClamp="md" className="space-y-8">
       <div className="flex justify-center h-16 mx-8 md:h-24">

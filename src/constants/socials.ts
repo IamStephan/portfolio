@@ -6,7 +6,7 @@ const Socials = [
   {
     name: 'LinkedIn',
     Logo: LinkedInLogo,
-    url: 'https://linkedin.com/in/iamstephann',
+    url: 'https://linkedin.com/in/stephan-burger',
   },
   {
     name: 'Github',

@@ -23,8 +23,8 @@ const Contact: NextPage = () => {
       <Page>
         {isFormSuccess ? (
           <EmptyState
-            title="Thank you!"
-            message="asdasdasdasd"
+            title="Message sent!"
+            message="Thanks! I will get back to you as soon as possible."
             action={
               <Button
                 to={Pages.contact}

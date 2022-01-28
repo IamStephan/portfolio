@@ -1,8 +1,7 @@
 import path from 'path'
 import { IConfig, handleNextMDXImages } from '@/lib/mdx-next-image-props'
 import { deepMap } from '@/lib/shared-utils'
-
-const SUPPORTED_IMAGES_EXT = /[\/.](gif|jpg|jpeg|tiff|png)$/i
+import { hasToken, parseToken } from '@/lib/token-parser'
 
 /**
  * @description This takes the frontmatter of the content (object form)
@@ -22,12 +21,16 @@ export const mdxNextFrontmatterImages = async (
   const frontMatterClone = JSON.parse(JSON.stringify(frontmatter))
 
   const newfrontmatter = await deepMap(frontMatterClone, async (value) => {
-    if (typeof value === 'string' && SUPPORTED_IMAGES_EXT.test(value)) {
+    if (typeof value === 'string' && hasToken('image', value)) {
+      const [pathToImg, alt] = parseToken('image', value)
+
       let imageNode = await handleNextMDXImages(
         filepath,
-        path.basename(value),
+        path.basename(pathToImg),
         config
       )
+
+      imageNode.alt = alt
 
       return imageNode
     }

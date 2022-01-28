@@ -21,6 +21,7 @@ const About: NextPage = () => {
           showcase={{
             src: TestImage,
             objectPosition: 'bottom',
+            alt: 'Showcase of my previous work on multiple devices.',
           }}
           title="[About me]"
         />

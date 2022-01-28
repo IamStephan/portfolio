@@ -50,6 +50,8 @@ const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
           onExit={handleBackdropAnim}
         >
           <div
+            aria-label="Close menu"
+            role="button"
             className="absolute inset-0 bg-dark-900/80 backdrop-blur-sm"
             onClick={onCloseRequest}
           />
@@ -64,6 +66,7 @@ const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
             <Link
               to={Pages.home}
               className="flex justify-center max-w-full px-6 py-6"
+              aria-label="Go back home"
             >
               <HorLogo className="w-full h-auto max-w-[250px]" />
             </Link>
@@ -98,12 +101,13 @@ const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
             </div>
 
             <div className="grid grid-cols-3 mt-4 border-t border-gray-600 divide-x divide-gray-600">
-              {Socials.map(({ Logo, url }) => (
+              {Socials.map(({ Logo, url, name }) => (
                 <div key={url} className="aspect-w-3 aspect-h-2 group">
                   <ExternalLink
                     href={url}
                     isTrusted
                     className="flex items-center justify-center group-active:bg-dark-500/40"
+                    aria-label={`View my ${name} profile`}
                   >
                     <Logo className="w-6 h-6 xs:h-8 xs:w-8" />
                   </ExternalLink>
@@ -114,6 +118,7 @@ const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
             <button
               onClick={onCloseRequest}
               className="flex items-center justify-center w-full py-2 border-t border-gray-600"
+              aria-label="Close menu"
             >
               <CloseIcon className="w-10 h-10" />
             </button>

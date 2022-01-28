@@ -1,6 +1,6 @@
 import path from 'path'
-import replace from 'string-replace-async'
 import { IConfig, handleNextMDXImages } from '@/lib/mdx-next-image-props'
+import { replaceAllTokens } from '@/lib/token-parser'
 
 /**
  * @description This takes the content as a string and looks for token matches
@@ -18,29 +18,18 @@ export const mdxNextContentImages = async (
   content: string,
   config: IConfig
 ) => {
-  const _content = await replace(
-    content,
-    /(image)\([^\)]*\)(\.[^\)]*\))?/g,
-    async (match) => {
-      const value = match.match(/("|')((?:\\\1|(?:(?!\1).))*)\1/g) || []
+  return await replaceAllTokens('image', content, async (args) => {
+    const imagePath = args[0]
+    const imageAlt = args[1]
 
-      // This is assuming that the params cannot contain ' and "
-      let args = value.map((arg) => arg.trim().replaceAll(/\"|\'/g, ''))
+    const imageNode = await handleNextMDXImages(
+      filepath,
+      path.basename(imagePath),
+      config
+    )
 
-      const imagePath = args[0]
-      const imageAlt = args[1]
+    imageNode.alt = imageAlt
 
-      const imageNode = await handleNextMDXImages(
-        filepath,
-        path.basename(imagePath),
-        config
-      )
-
-      imageNode.alt = imageAlt
-
-      return JSON.stringify(imageNode)
-    }
-  )
-
-  return _content
+    return JSON.stringify(imageNode)
+  })
 }

@@ -2,10 +2,10 @@ import React from 'react'
 import clsx from 'clsx'
 
 import Section, { SectionGapMap } from '@/templates/section'
-import RowItemAlt, { Props as RowItemProps } from '@/components/row_item'
+import Item, { Props as ItemProps } from './item'
 
 interface Props {
-  items: Array<RowItemProps>
+  items: Array<ItemProps>
 }
 
 const ListRows: React.FC<Props> = ({ items }) => {
@@ -19,7 +19,7 @@ const ListRows: React.FC<Props> = ({ items }) => {
       >
         {items.map((item) => (
           <li key={item.title}>
-            <RowItemAlt {...item} />
+            <Item {...item} />
           </li>
         ))}
       </ul>

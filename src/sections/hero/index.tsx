@@ -49,7 +49,7 @@ const Hero = () => {
 
         <p
           className={clsx(
-            'mb-8 md:mb-12 md:text-lg text-gray-500 font-heading',
+            'mb-8 md:mb-12 md:text-lg text-gray-400 font-heading',
             IndentStyles
           )}
         >

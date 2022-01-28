@@ -64,12 +64,13 @@ const Footer: React.FC<Props> = ({ hasTopLine }) => {
           <HeartIcon className="h-6 pl-2 text-persian-red-main" />
         </div>
         <div className="grid grid-cols-3 row-start-1 border-b border-gray-600 divide-x divide-gray-600 md:border-l md:border-b-0 md:col-start-3">
-          {Socials.map(({ Logo, url }) => (
+          {Socials.map(({ Logo, url, name }) => (
             <ExternalLink
               href={url}
               key={url}
               isTrusted
               className="relative flex items-center justify-center py-6 overflow-hidden cursor-pointer group"
+              aria-label={`View my ${name} profile`}
             >
               <Logo className="z-10 w-auto h-8 md:h-6 lg:h-8" />
               <div className="absolute w-full duration-200 scale-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-dark-500/40 group-hover:scale-110 left-1/2 top-1/2 aspect-w-1 aspect-h-1"></div>

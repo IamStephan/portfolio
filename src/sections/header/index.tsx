@@ -1,6 +1,4 @@
 import React from 'react'
-import { useMedia } from 'react-use'
-import clsx from 'clsx'
 
 import Section from '@/templates/section'
 import Button from '@/components/clickable'
@@ -9,7 +7,6 @@ import Logo from '@/components/p_logo'
 import MenuButton from '@/components/menu_button'
 import { useLogoStore } from '@/stores/logo'
 import Pages from '@/constants/pages'
-import Screens from '@/constants/screens'
 import ResumeUrl from '@/constants/resume'
 
 import ResumeIcon from '@/assets/icons/profile-line.svg'
@@ -36,11 +33,6 @@ export interface Props {}
 
 const Header: React.FC<Props> = () => {
   const { logoPos } = useLogoStore()
-  /**
-   * Default state does not matter since logoPos is
-   * only set to in-header when js is loaded (client-side)
-   */
-  const isMobile = useMedia(`(min-width: ${Screens.lg})`, true)
 
   return (
     <Section
@@ -50,10 +42,10 @@ const Header: React.FC<Props> = () => {
       className="z-10 flex items-center py-12 space-x-6 md:space-x-10 lg:space-x-28"
     >
       {/* Logo */}
-      <div>
-        <Link to={Pages.home}>
+      <div className="flex justify-start">
+        <Link to={Pages.home} aria-label="Go back home" className="block">
           {logoPos === 'in-header' && (
-            <Logo type="mini" className={clsx('z-30 h-16', {})} />
+            <Logo type="mini" className="z-30 h-16" />
           )}
         </Link>
       </div>

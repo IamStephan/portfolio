@@ -26,6 +26,7 @@ const ListPagination: React.FC<Props> = ({ pages, activePage, getTo }) => {
                   }
                 )}
                 to={getTo(page + 1)}
+                aria-label={`Go to page ${page + 1}`}
               >
                 {page + 1}
               </Link>

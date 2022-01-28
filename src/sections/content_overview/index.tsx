@@ -89,7 +89,9 @@ const ContentOverview: React.FC<Props> = ({
           </Heading>
           <ul className="flex flex-wrap -mt-1 -ml-1">
             {stack.map((item) => (
-              <LogoChip key={item} logo={item as any} className="m-1" />
+              <li key={item} className="m-1">
+                <LogoChip logo={item as any} />
+              </li>
             ))}
           </ul>
         </div>

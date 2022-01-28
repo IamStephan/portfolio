@@ -49,7 +49,6 @@ export const deepMapSync = (
  * @param data JS object
  * @param callback Callback for each node. Receives key and value as args
  * @returns
- * @deprecated Only the sync version of this fucntion gets used.
  */
 export const deepMap = async (
   data: any,

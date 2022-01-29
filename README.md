@@ -1,13 +1,13 @@
 <div id="top"></div>
 
-<div align="center">
+<div align="left">
   <a href="https://iamstephan.dev">
     <img src="assets/project_logo.svg" alt="Logo" width="auto" height="150">
   </a>
 
-<h3 align="center">Portfolio Project</h3>
+<h3 align="left">Portfolio Project</h3>
 
-  <p align="center">
+  <p align="left">
     <a href="https://iamstephan.dev">Visit Website</a>
     •
     <a href="https://github.com/IamStephan/portfolio/issues">Report Bug</a>
@@ -18,7 +18,9 @@
 
 ## About The Project
 
+<br />
 [![Product Name Screen Shot][product-screenshot]](https://iamstephan.dev)
+<br />
 
 With more experience and new projects to showcase, I thought it would make
 sense to update my portfolio. Aiming for performance and a somewhat

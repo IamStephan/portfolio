@@ -8,10 +8,8 @@
 <h3 align="center">Portfolio Project</h3>
 
   <p align="center">
-    Personal Portfolio to showcase my work and experiment with new libraries and concepts.
-    <br />
     <a href="https://iamstephan.dev">Visit Website</a>
-    ·
+    •
     <a href="https://github.com/IamStephan/portfolio/issues">Report Bug</a>
   </p>
 </div>
@@ -20,7 +18,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://iamstephan.dev)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -37,7 +35,9 @@
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
+## Features
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Run Locally
 
@@ -79,12 +79,6 @@ Start the server
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Contact
-
-Stephan Burger - [Email](mailto:stephanburger54@gmail.com) • [LinkedIn](https://www.linkedin.com/in/stephan-burger/) • [Website](https://iamstephan.dev)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Related
 
 Previous iterations of this project.
@@ -92,3 +86,5 @@ Previous iterations of this project.
 - [portfolio-v1](https://github.com/IamStephan/portfolio-v1)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+[product-screenshot]: assets/showcase_homepage.webp

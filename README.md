@@ -133,4 +133,4 @@ Previous iterations of this project.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-[product-screenshot]: assets/showcase_homepage.webp
+[product-screenshot]: assets/project_showcase.webp

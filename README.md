@@ -19,7 +19,9 @@
 ## About The Project
 
 <br />
+
 [![Product Name Screen Shot][product-screenshot]](https://iamstephan.dev)
+
 <br />
 
 With more experience and new projects to showcase, I thought it would make
@@ -51,10 +53,10 @@ data ([example file](content/_template/index.mdx)).
 
 Main libraries responsibe for this:
 
-- [mdx-nfi (for frontmatter)](lib/mdx-nfi/index.ts)
-- [mdx-nci (for content)](lib/mdx-nci/index.ts)
-- [mdx-next-image-props](lib/mdx-next-image-props/index.ts)
-- [token-parser](lib/token-parser/index.ts)
+- [mdx-nfi (for frontmatter)](lib/mdx-nfi)
+- [mdx-nci (for content)](lib/mdx-nci)
+- [mdx-next-image-props](lib/mdx-next-image-props)
+- [token-parser](lib/token-parser)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

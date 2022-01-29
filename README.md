@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="assets/logo.svg" alt="Logo" width="80" height="auto">
+    <img src="assets/project_logo.svg" alt="Logo" width="auto" height="150">
   </a>
 
 <h3 align="center">Portfolio Project</h3>

@@ -36,5 +36,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# Generated Images from mdx
+# Generated files
 /public/case-studies/*
+robots.txt
+sitemap*

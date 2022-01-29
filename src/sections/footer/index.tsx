@@ -18,7 +18,7 @@ export interface Props {
 const Footer: React.FC<Props> = ({ hasTopLine }) => {
   return (
     <Section as="footer" className="sticky top-[100vh]" sectionGap="none">
-      <section
+      <nav
         className={clsx(
           'grid grid-cols-1 border-b border-gray-600 divide-y divide-gray-600 md:divide-y-0 md:divide-x md:grid-cols-3',
           {
@@ -53,7 +53,7 @@ const Footer: React.FC<Props> = ({ hasTopLine }) => {
           </Heading>
           <div className="absolute w-full duration-300 scale-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-dark-500/40 group-hover:scale-110 left-1/2 top-1/2 aspect-w-1 aspect-h-1"></div>
         </Link>
-      </section>
+      </nav>
 
       {/* Meta */}
       <section className="grid grid-cols-1 md:grid-cols-3">
@@ -63,7 +63,7 @@ const Footer: React.FC<Props> = ({ hasTopLine }) => {
           <span>with</span>
           <HeartIcon className="h-6 pl-2 text-persian-red-main" />
         </div>
-        <div className="grid grid-cols-3 row-start-1 border-b border-gray-600 divide-x divide-gray-600 md:border-l md:border-b-0 md:col-start-3">
+        <nav className="grid grid-cols-3 row-start-1 border-b border-gray-600 divide-x divide-gray-600 md:border-l md:border-b-0 md:col-start-3">
           {Socials.map(({ Logo, url, name }) => (
             <ExternalLink
               href={url}
@@ -76,7 +76,7 @@ const Footer: React.FC<Props> = ({ hasTopLine }) => {
               <div className="absolute w-full duration-200 scale-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-dark-500/40 group-hover:scale-110 left-1/2 top-1/2 aspect-w-1 aspect-h-1"></div>
             </ExternalLink>
           ))}
-        </div>
+        </nav>
       </section>
     </Section>
   )

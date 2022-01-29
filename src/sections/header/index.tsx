@@ -51,7 +51,7 @@ const Header: React.FC<Props> = () => {
       </div>
 
       {/* Quick Actions */}
-      <div className="justify-end flex-1 hidden space-x-12 sm:flex">
+      <nav className="justify-end flex-1 hidden space-x-12 sm:flex">
         <QuickAction
           text="Check out my"
           title="Case Studies"
@@ -59,7 +59,7 @@ const Header: React.FC<Props> = () => {
         />
         <QuickAction text="learn more" title="About me" to={Pages.about} />
         <QuickAction text="Let's get" title="In Touch" to={Pages.contact} />
-      </div>
+      </nav>
 
       {/* CTA Button */}
       <div className="hidden md:block">

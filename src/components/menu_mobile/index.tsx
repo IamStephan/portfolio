@@ -62,7 +62,7 @@ const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
           onAppear={handleContainerAnim}
           onExit={handleContainerAnim}
         >
-          <div className="absolute flex flex-col max-h-[calc(100%-48px)] overflow-auto overflow-y-auto border border-gray-600 top-6 inset-x-6 bg-dark-900">
+          <nav className="absolute flex flex-col max-h-[calc(100%-48px)] overflow-auto overflow-y-auto border border-gray-600 top-6 inset-x-6 bg-dark-900">
             <Link
               to={Pages.home}
               className="flex justify-center max-w-full px-6 py-6"
@@ -122,7 +122,7 @@ const Menu: React.FC<Props> = ({ onCloseRequest = () => {} }) => {
             >
               <CloseIcon className="w-10 h-10" />
             </button>
-          </div>
+          </nav>
         </Flipped>
       </div>
     </Flipped>

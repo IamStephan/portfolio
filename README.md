@@ -1,20 +1,18 @@
 <div id="top"></div>
 
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://iamstephan.dev">
     <img src="assets/project_logo.svg" alt="Logo" width="auto" height="150">
   </a>
 
 <h3 align="center">Portfolio Project</h3>
 
   <p align="center">
-    project_description
+    Personal Portfolio to showcase my work and experiment with new libraries and concepts.
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://iamstephan.dev">Visit Website</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/IamStephan/portfolio/issues">Report Bug</a>
   </p>
 </div>
 
@@ -23,8 +21,6 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -85,9 +81,7 @@ Start the server
 
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Stephan Burger - [Email](mailto:stephanburger54@gmail.com) • [LinkedIn](https://www.linkedin.com/in/stephan-burger/) • [Website](https://iamstephan.dev)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -95,6 +89,6 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 Previous iterations of this project.
 
-- [portfolio-v1](https://github.com/matiassingers/awesome-readme)
+- [portfolio-v1](https://github.com/IamStephan/portfolio-v1)
 
 <p align="right">(<a href="#top">back to top</a>)</p>

@@ -39,7 +39,7 @@ const Header: React.FC<Props> = () => {
       as="header"
       sectionGap="none"
       isPadded
-      className="z-10 flex items-center py-12 space-x-6 md:space-x-10 lg:space-x-28"
+      className="z-10 flex items-center justify-between py-12 space-x-6 md:space-x-10 lg:space-x-28"
     >
       {/* Logo */}
       <div className="flex justify-start">

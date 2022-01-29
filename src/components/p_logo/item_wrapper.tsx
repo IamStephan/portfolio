@@ -30,7 +30,7 @@ const LogoBase: React.FC<Props> = ({
       shouldFlip={shouldFlip}
       {...rest}
     >
-      <div ref={divRef} className={clsx('w-full h-full', className)}>
+      <div ref={divRef} className={clsx('w-auto h-full', className)}>
         {children}
       </div>
     </Flipped>

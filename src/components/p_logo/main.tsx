@@ -7,7 +7,7 @@ const LogoMain: React.FC<BaseProps> = ({ flipId = 'logo-letter', ...rest }) => {
     <Wrapper flipId={flipId} {...rest}>
       <svg
         viewBox="0 0 668 668"
-        className="w-full h-full"
+        className="w-auto h-full"
         preserveAspectRatio="xMaxYMid meet"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

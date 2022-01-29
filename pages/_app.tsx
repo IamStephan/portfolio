@@ -40,6 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         title="Stephan Burger"
         description="Hey, I'm Stephan, a front-end developer. I develop websites and applications with impactful experiences, excellent performance and modern best practices."
         additionalLinkTags={SeoFavicon}
+        additionalMetaTags={[{ name: 'theme-color', content: '#0C0E0F' }]}
         openGraph={SeoOG}
       />
 

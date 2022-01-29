@@ -10,7 +10,7 @@ import Progressbar from '@/components/progressbar'
 import { initialize } from '@/stores/readiness'
 import { useLoaderStore } from '@/stores/loader'
 import { useLogoStore } from '@/stores/logo'
-import { SeoFavicon } from '@/constants/seo'
+import { SeoFavicon, SeoOG } from '@/constants/seo'
 import '@/styles/globals.css'
 
 const SpringConfig = {
@@ -40,6 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         title="Stephan Burger"
         description="Hey, I'm Stephan, a frontend developer."
         additionalLinkTags={SeoFavicon}
+        openGraph={SeoOG}
       />
 
       <Progressbar />

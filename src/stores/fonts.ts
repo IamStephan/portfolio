@@ -43,8 +43,13 @@ export const waitForFont = async (fonts: Array<IFontFace>, timeout: number) => {
     }).load(undefined, timeout)
   )
 
-  // Resolve regardless of font loaded state
-  await Promise.allSettled(promises)
+  try {
+    // Resolve regardless of font loaded state
+    await Promise.allSettled(promises)
+  } catch (e) {
+    // For unsupported browsers
+    console.error(e)
+  }
 }
 
 const store = proxy<IStore>({ isFontsLoaded: false })

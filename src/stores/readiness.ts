@@ -16,8 +16,14 @@ export const initialize = async () => {
     waitForFont([{ family: 'Rubik' }], FontTimeout),
   ]
 
-  // Wait for all promises to settle regardless of state
-  await Promise.allSettled(promises)
+  try {
+    // Wait for all promises to settle regardless of state
+    await Promise.allSettled(promises)
+  } catch (e) {
+    // Some browsers do not support this
+    // In that case rather have the loader set to ready
+    console.error(e)
+  }
 
   loaderStore.isLoading = false
   logoStore.logoPos = 'in-header'

@@ -1,13 +1,13 @@
 <div id="top"></div>
 
-<div align="left">
+<div align="center">
   <a href="https://iamstephan.dev">
     <img src="assets/project_logo.svg" alt="Logo" width="auto" height="150">
   </a>
 
-<h3 align="left">Portfolio Project</h3>
+<h3 align="center">Portfolio Project</h3>
 
-  <p align="left">
+  <p align="center">
     <a href="https://iamstephan.dev">Visit Website</a>
     •
     <a href="https://github.com/IamStephan/portfolio/issues">Report Bug</a>

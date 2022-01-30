@@ -1,3 +1,8 @@
+const BaseUrl =
+  process.env.NODE_ENV === 'development'
+    ? 'localhost:300'
+    : 'https://iamstephan.dev'
+
 const SeoFavicon = [
   {
     rel: 'icon',
@@ -13,24 +18,9 @@ const SeoFavicon = [
 
 const SeoOGImages = [
   {
-    url: '/og-images/generic/small.jpg',
-    width: 400,
-    height: 400,
-  },
-  {
-    url: '/og-images/generic/medium.jpg',
+    url: `${BaseUrl}/og-images/generic.jpg`,
     width: 1200,
     height: 360,
-  },
-  {
-    url: '/og-images/generic/large.jpg',
-    width: 1080,
-    height: 1080,
-  },
-  {
-    url: '/og-images/generic/xlarge.jpg',
-    width: 1080,
-    height: 1920,
   },
 ]
 
